@@ -1,7 +1,9 @@
 Sistema de Reparaciones Electrónicas
+
 Este es un sistema web que desarrollé para gestionar el ingreso de clientes, diagnóstico de dispositivos, asignación de precios y actualización de estados. Todo el acceso está protegido por login y uso de sesiones, así que solo pueden ingresar los usuarios autenticados.
 
 Funcionalidades
+
 Inicio de sesión con validación de sesión activa
 
 Ingreso de nuevos clientes y dispositivos
@@ -19,23 +21,20 @@ Alertas con JavaScript y mensajes en pantalla
 Interfaz limpia con Bootstrap
 
 Estructura del proyecto
-bash
-Copiar
-Editar
+
 Proyecto/
-│
-├── Controlador/         # Controladores del sistema (Index, Usuario, Reparaciones)
+├── Controlador/ (Controladores del sistema: Index, Usuario, Reparaciones)
 ├── Modelo/
-│   ├── Entidades/       # Clases de datos como Usuario.php, Cliente.php, etc.
-│   ├── Metodos/         # Métodos para interactuar con la BD (UsuarioM.php, ClienteM.php...)
-│   └── Conexion.php     # Conexión a la base de datos
-│
-├── Vista/               # HTML/PHP del frontend (Login, formularios, ingreso cliente...)
-│   └── Estilos/         # Archivos CSS (Bootstrap)
-│
-├── JS/                  # Scripts para búsquedas y validaciones
-└── index.php            # Enrutador principal
+│ ├── Entidades/ (Clases como Usuario.php, Cliente.php, etc.)
+│ ├── Metodos/ (Métodos para interactuar con la base de datos: UsuarioM.php, ClienteM.php...)
+│ └── Conexion.php (Clase para conexión con la base de datos)
+├── Vista/ (Frontend: Login, ingreso cliente, formularios...)
+│ └── Estilos/ (Estilos CSS como Bootstrap)
+├── JS/ (JavaScript para búsquedas y validaciones)
+└── index.php (Archivo principal que enruta las acciones)
+
 Requisitos
+
 PHP 8 o superior
 
 Servidor local tipo XAMPP
@@ -45,20 +44,21 @@ MySQL
 Navegador web
 
 Cómo usarlo
+
 Clonar el repositorio:
-
-bash
-Copiar
-Editar
 git clone https://github.com/Tonysk8cr/ProyectoTec.git
-Para la base de datos usar el archivo SCRIPT SQL 
 
-Copiar la carpeta en htdocs de XAMPP o donde tengás configurado tu servidor local.
+Importar la base de datos usando el archivo SCRIPT SQL que viene incluido.
+
+Copiar la carpeta en htdocs de XAMPP o en la ubicación que tengas configurada para el servidor local.
 
 Sobre el inicio de sesión
-Para ingresar al sistema hay que iniciar sesión con un usuario registrado en la base de datos. La verificación de sesión se hace al inicio de cada vista protegida. Si alguien intenta acceder sin estar logueado, lo redirige al login con una alerta.
 
-Nota: Las contraseñas se comparan como texto plano por ahora, pero se puede mejorar con password_hash() y password_verify() si se quiere más seguridad.
+Para ingresar al sistema hay que iniciar sesión con un usuario registrado en la base de datos. La verificación de sesión se hace al inicio de cada vista protegida. Si alguien intenta acceder sin haber iniciado sesión, lo redirige al formulario de login con una alerta.
+
+Nota: Las contraseñas actualmente se comparan como texto plano, pero se puede mejorar fácilmente usando password_hash() y password_verify() para mayor seguridad.
 
 Comentarios finales
-Este proyecto lo hice con estructura MVC desde cero, sin frameworks. La idea es que se pueda escalar fácil para incluir más funciones como roles de usuario, reportes o conexión con APIs.
+
+Este proyecto lo hice con estructura MVC desde cero, sin frameworks. La idea es que sea fácil de escalar y se le puedan agregar más funcionalidades como control de roles, generación de reportes o integración con APIs.
+
